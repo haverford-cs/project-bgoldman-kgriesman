@@ -1,4 +1,6 @@
 from sklearn.impute import SimpleImputer
+from sklearn.model_selection import train_test_split
+
 import numpy as np
 
 def numify(n):
@@ -28,3 +30,8 @@ SimpleImputer()
 
 data = imp.transform(data)
 print(imp.transform(data))
+
+X_train, X_test, y_train, y_test = train_test_split(data, label, test_size=0.2)
+
+print(len(X_train), len(y_train))
+print(len(X_test), len(y_test))
