@@ -1,4 +1,5 @@
 from data import X_train, X_test, y_train, y_test
+
 import numpy as np
 from sklearn.ensemble import AdaBoostClassifier
 
