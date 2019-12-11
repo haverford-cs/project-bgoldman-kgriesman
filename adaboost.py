@@ -6,6 +6,7 @@ adaboost = AdaBoostClassifier(n_estimators=100, random_state=0)
 adaboost.fit(X_train, y_train)
 
 
+
 pred = adaboost.predict(X_test)
 matrix = np.zeros((2,2))
 for i in range(len(y_test)):
