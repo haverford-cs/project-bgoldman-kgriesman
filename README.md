@@ -9,3 +9,13 @@ Ben and Kendra: 12/3/19 (1 hr)
 Kendra: 12/5/19 (1 hr)
   - Split train and test data (80:20)
   - Set up confusion matrix for KNN
+
+Ben: 12/5/19 (1 hr)
+  - added random seed to split so that it split same way everytime
+  - Professor suggested we try adaboost because very uneven number of labels
+  - started SVM
+
+Ben and Kendra: 12/10/19 (1.5 hrs)
+  - Tried under and oversampling data
+  - Tested various hyperparameters for SVM and AdaBoost
+  - Added ROC curve for AdaBoost
