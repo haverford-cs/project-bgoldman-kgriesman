@@ -1,4 +1,4 @@
-from data import X_train, X_test, y_train, y_test
+from data import X_train, X_test, y_train, y_test, feature_names
 
 import numpy as np
 from sklearn.ensemble import AdaBoostClassifier
@@ -22,6 +22,14 @@ print(matrix)
 print(adaboost.predict(X_test), "predict")
 print(adaboost.score(X_test, y_test), "score")
 
+feat_importance = adaboost.feature_importances_
+best_feat = []
+for i in range(len(feat_importance)):
+    if feat_importance[i] > 0.035:
+        best_feat += [feature_names[i]]
+        print(feat_importance[i], feature_names[i])
+#print(best_feat, "features")
+
 #ROC curves:
 def confusion_matrix(y_test, y_pred):
     matrix = np.zeros((2,2))
@@ -44,7 +52,8 @@ def true_positive(conf_matrix):
     return tp/total
 
 
-thresh = [t for t in np.linspace(0,1,21)]
+
+thresh = [t for t in np.linspace(0,1,41)]
 ada_tp = []
 ada_fp = []
 for t in thresh:

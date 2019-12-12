@@ -4,7 +4,7 @@ from sklearn.neighbors import  KNeighborsClassifier
 import numpy as np
 
 def main():
-    neigh = KNeighborsClassifier(n_neighbors=20)
+    neigh = KNeighborsClassifier(n_neighbors=3)
     neigh.fit(X_train, y_train)
     print(neigh.score(X_test, y_test))
     print(neigh.predict(X_test))
