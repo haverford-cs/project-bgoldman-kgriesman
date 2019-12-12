@@ -3,10 +3,17 @@ import numpy as np
 from sklearn.svm import SVC
 
 from imblearn.over_sampling import RandomOverSampler
+from imblearn.under_sampling import ClusterCentroids
+
+
 ros = RandomOverSampler(random_state=0)
 X_resampled, y_resampled = ros.fit_resample(X_train, y_train)
 
-svm = SVC(gamma='auto', kernel="linear")
+
+#cc = ClusterCentroids(random_state=0)
+#X_resampled, y_resampled = cc.fit_resample(X_resampled, y_resampled)
+
+svm = SVC(gamma='auto', kernel="rbf")
 svm.fit(X_resampled, y_resampled)
 pred = svm.predict(X_test)
 matrix = np.zeros((2,2))
